@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link  href="../css_files/style_register.css" rel="stylesheet">
+    <title>Форма регистрации</title>
+    <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/2652/premium/2652736.png?token=exp=1653486261~hmac=5a7cf4bd013d1b04f4a1030debcd6d8f">
+</head>
+
+<body background = "https://images.wallpaperscraft.ru/image/single/fon_kapli_svet_krugi_siniy_83428_1920x1080.jpg" style="width: 100%;height: 100%;background-size:cover ">
+    <div class="register_form" id="register_form_id">
+        <h1 class="register_title" >
+            Регистрация
+        </h1>
+        <div class = "register_field">
+            <input type="text" placeholder="Имя" id="Register_name" >
+        </div>
+        <div class = "register_field">
+            <input type="text" placeholder="Фамилия" id="Register_family">
+        </div>
+        <div class = "register_field">
+            <input type="number" placeholder="ID" id="Register_ID" inputmode="numeric">
+        </div>
+        <div class = "register_field">
+            <input type="password" placeholder="Пароль" id="Register_password" minlength="8">
+        </div>
+        <div class = "register_field">
+            <input type="password" placeholder="Подтвердите пароль" id="Register_return_password" minlength="8">
+        </div>
+
+        <div class="register-buttons">
+            <button class="button" id="register_form1" style="font: 18px 'Nunito ExtraLight' " >Регистрация</button>
+            <button class="button" id="register_form2" style="font: 18px 'Nunito ExtraLight' ">Вход</button>
+        </div>
+    </div>
+    <div class="entrance_form" id="entrance_form_id">
+        <h1 class="entrance_title">
+            Вход
+        </h1>
+
+        <div class = "entrance_field">
+            <input type="number" placeholder="ID" id="entrance_ID" inputmode="numeric">
+        </div>
+        <div class = "entrance_field" title="Пароль должен быть не короче 8 символов и содержать строчную и заглавную буквы и цифру">
+            <input type="password" placeholder="Пароль" id="entrance_password" required pattern=(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,} >
+        </div>
+
+        <div class="entrance-buttons">
+            <button class="button" id="entrance_form2" style="font: 18px 'Nunito ExtraLight' ">Войти</button>
+            <div class="entrance-buttons-text">Нет аккаунта?</div>
+            <button class="button" id="entrance_form1" style="font: 18px 'Nunito ExtraLight' ">Зарегистрироваться</button>
+        </div>
+    </div>
+
+<script src="../scripts/script_register_entrance.js">
+</script>
+
+
+</body>
+</html>

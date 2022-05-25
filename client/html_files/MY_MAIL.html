@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css_files/style_mail.css" rel="stylesheet">
+    <title>BubbleTalk</title>
+    <link rel="shortcut icon"
+          href="https://cdn-icons.flaticon.com/png/512/2652/premium/2652736.png?token=exp=1653486261~hmac=5a7cf4bd013d1b04f4a1030debcd6d8f">
+
+</head>
+<body>
+<div class="load_gif" id="load_gif_id">
+    <div class="loading">
+        <img src="https://i.gifer.com/yy3.gif" id="yy3gif_id" alt="yy3gif">
+    </div>
+</div>
+<!-- <marquee scrollamount='40' behavior = 'alternate'>Поставьте 5</marquee> -->
+
+<div class="new_mail_form" id="mail_id">
+
+    <!--Верхний прямоугольник -->
+    <div class="top_block_logo" id="top_block_logo_id"></div>
+    <img src="../image/BUBBLE_TASK.svg" id="IMAGE_LOGO">
+
+    <!--ФОРМА С ОТКРЫТЫМ СООБЩЕНИЕМ -->
+    <div class="open_message" id="open_message_id">
+        <h5 style="text-align: center;margin-top: 50%;font: 17px 'Nunito ExtraLight'">Нет выбранных сообщений</h5>
+    </div>
+    <div class="open_message_full" id="open_message_full_id">
+        <h4 id="name_send_message_id" style="margin-top: 15px;padding-bottom: 2px">Кому :
+        </h4>
+        <output id="open_output_name"></output>
+
+        <div class="this_message">
+            <button id="delete_this_message_id">Удалить сообщение</button>
+            <button id="reply_this_message_id">Переслать сообщение</button>
+        </div>
+        <hr>
+
+
+        <textarea id="open_output_text" readonly></textarea>
+
+    </div>
+    <!--Кнопки меню взаимодействий -->
+    <div class="mail_button">
+        <button class="buttons" id="new_mail_btn">Новое сообщение</button>
+        <button class="buttons" id="incoming_message">Входящие
+            <output id="Count_incoming_message">0</output>
+        </button>
+        <button class="buttons" id="outgoing_message">Отправленные
+            <output id="Count_outgoing_message">0</output>
+        </button>
+
+        <!--Музыка-->
+        <audio controls style="width: 11vw;margin-top: 15px;border: 2px solid black;border-radius: 30px">
+            <source src="../audio/mysic.mp3" type="audio/mpeg" >
+        </audio>
+        <!-- Gismeteo Informer (begin) -->
+        <div id="GMI_125x125-1_ru" class="gm-info">
+            <div style="position:relative; width:125px;height:125px;border:solid 1px;background:#F5F5F5;border-color:#EAEAEA #E4E4E4 #DDDDDD #E6E6E6;border-radius:4px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;">
+                <a style="font:9px/11px Tahoma,Arial,sans-serif;letter-spacing:0.5px;text-align:center;text-decoration:none;position:absolute;bottom:3px;left:0;width:100%;color:#333;" href="https://www.gismeteo.ru"><span style="color:#0099FF;">Gis</span>meteo</a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            (function() {
+                var
+                    d = this.document,
+                    o = this.navigator.userAgent.match(/MSIE (6|7|8)/) ? true : false,
+                    s = d.createElement('script');
+
+                s.src  = 'https://www.gismeteo.ru/informers/simple/install/';
+                s.type = 'text/javascript';
+                s[(o ? 'defer' : 'async')] = true;
+                s[(o ? 'onreadystatechange' : 'onload')] = function() {
+                    try {new GmI({
+                        slug : '6297ced7c83c477f2c2a8cdf63f13eb1',
+                        type : '125x125-1',
+                        lang : 'ru'
+                    })} catch (e) {}
+                }
+
+                d.body.appendChild(s);
+            })();
+        </script>
+        <!-- Gismeteo Informer (finish) -->
+    </div>
+
+    <!--Блок отправленных сообщений -->
+    <div class="container_form" id="container_form_id">
+        <div class="top_block_container">
+            <h3 style="text-align: left;margin-top: 2px;margin-left: 20px;font: 25px 'Nunito ExtraLight'">Отправленные</h3>
+            <button class="buttons" id="Clear_mail_btn">Очистить все</button>
+        </div>
+        <hr>
+
+        <div class="clear_message_form" id="clear_message_form_id"></div>
+    </div>
+
+    <!--Блок входящих сообщений -->
+    <div class="outgoing_container" id="outgoing_container_id">
+        <div class="top_block_container">
+            <h3 style="text-align: left;margin-top: 2px;margin-left: 20px;font: 25px 'Nunito ExtraLight'">Входящие</h3>
+            <button class="buttons" id="Clear_mail_outgoing_btn">Очистить все</button>
+        </div>
+        <hr>
+    </div>
+
+    <!--Кнопка выхода -->
+    <div class="message_close" id="close_message_form">
+        <button id="close_form_message_btn"><img src="../image/door-svgrepo-com.svg" style="height: 18px;width: 18px"></button>
+    </div>
+
+</div>
+<!--Форма,открывающаяся при нажатии на кнопку НОВОЕ СООБЩЕНИЕ -->
+<div class="block_new_message" id="block_new_message_id">
+    <div id="Close_form_new_message_id" style="border-radius: 20px">
+        <h3>Письмо </h3>
+        <button id="Close_new_message"><img src="../image/door-svgrepo-com.svg" style="height: 15px;width: 15px"></button>
+    </div>
+    <div class="Send_name">
+        <h5>Кому: <input type="text" id="name_new">
+            <hr>
+        </h5>
+    </div>
+    <div class="text_new_message">
+        <textarea id="textarea_new"></textarea>
+    </div>
+    <button id="Send_button">Отправить</button>
+</div>
+
+<marquee direction="right" scrollamount="10" style="color: #b33bcc;position: fixed;font-weight: bold;top: 97%;font: 18px 'Nunito ExtraLight'" >Работу выполнили Латипова Эльвина и Охрименко Вадим</marquee>
+
+<script src="../scripts/script_MY_MAIL.js">
+
+</script>
+
+
+</body>
+</html>
